@@ -12,6 +12,22 @@ CREATE TABLE EmpresasFCT (
     fechaContacto DATE NOT NULL
 );
 ```
-![odoo_db](Tarea_12_Imagenes/consulta_apartado_1.png)
+![apartado_1](Tarea_12_Imagenes/consulta_apartado_1.png)
+
+## Apartado 2
+
+Insertar 5 registros
+```bash
+INSERT INTO EmpresasFCT (nombre, quiereAlumnos, numAlumnos, fechaContacto) VALUES
+('Reverendos', FALSE, 0, '2024-01-15'),
+('Maestros', TRUE, 5, '2023-12-10'),
+('Entrenadores', FALSE, 0, '2024-02-05'),
+('Libertinos', TRUE, 12, '2024-01-25'),
+('HappyEnd', FALSE, 0, '2023-11-30');
+```
+![apartado_2](Tarea_12_Imagenes/consulta_apartado_2.png)
+
+
+
 
 
