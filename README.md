@@ -58,6 +58,30 @@ ORDER BY c.name ASC;
 ```
 ![apartado_4](Tarea_12_Imagenes/consulta_apartado_4.png)
 
+## Apartado 5
+
+Utilizando las tablas de odoo, obtén un listado de empresas proveedoras, que han
+emitido algún reembolso (facturas rectificativas de proveedor)
+- Nombre de la empresa
+- Número de factura
+- Fecha de la factura
+- Total factura SIN impuestos
+Ordenadas por fecha de factura de modo que la primera sea la más reciente.
+
+Para esta query es necesario instalar la aplicación de facturación en odoo.
+```bash
+SELECT 
+    rp.name AS NombreEmpresa,
+    am.name AS NumeroFactura,
+    am.invoice_date AS FechaFactura,
+    am.amount_untaxed AS TotalSinImpuestos
+FROM account_move am
+JOIN res_partner rp ON am.partner_id = rp.id
+WHERE am.move_type = 'in_refund'
+ORDER BY am.invoice_date DESC;
+
+```
+![apartado_5](Tarea_12_Imagenes/consulta_apartado_5.png)
 
 
 
