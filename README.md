@@ -107,6 +107,17 @@ ORDER BY TotalFacturadoSinImpuestos DESC;
 ```
 ![apartado_6](Tarea_12_Imagenes/consulta_apartado_6.png)
 
+## Apartado 7
+
+Crea una sentencia que actualice el correo de los contactos cuyo dominio es
+@bilbao.example.com a @bilbao.bizkaia.neus
+```bash
+UPDATE res_partner
+SET email = REPLACE(email, '@bilbao.example.com', '@bilbao.bizkaia.neus')
+WHERE email LIKE '%@bilbao.example.com';
+```
+
+![apartado_7](Tarea_12_Imagenes/consulta_apartado_7.png)
 
 
 
