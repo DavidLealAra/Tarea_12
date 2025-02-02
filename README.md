@@ -68,7 +68,7 @@ emitido algún reembolso (facturas rectificativas de proveedor)
 - Total factura SIN impuestos
 Ordenadas por fecha de factura de modo que la primera sea la más reciente.
 
-Para esta query es necesario instalar la aplicación de facturación en odoo.
+Para esta consulta es necesario instalar la aplicación de facturación en odoo.
 ```bash
 SELECT 
     rp.name AS NombreEmpresa,
@@ -82,6 +82,31 @@ ORDER BY am.invoice_date DESC;
 
 ```
 ![apartado_5](Tarea_12_Imagenes/consulta_apartado_5.png)
+
+## Apartado 6
+
+Utilizando las tablas de odoo, obtén un listado de empresas clientes, a las que se les
+ha emitido más de dos facturas de venta (solo venta) confirmadas, mostrando los
+siguientes datos:
+- Nombre de la empresa
+- Número de facturas
+- Total facturado SIN IMPUESTOS
+
+```bash
+SELECT 
+    rp.name AS NombreEmpresa,
+    COUNT(am.id) AS NumeroFacturas,
+    SUM(am.amount_untaxed) AS TotalFacturadoSinImpuestos
+FROM account_move am
+JOIN res_partner rp ON am.partner_id = rp.id
+WHERE am.move_type = 'out_invoice'
+AND am.state = 'posted'
+GROUP BY rp.name
+HAVING COUNT(am.id) > 2
+ORDER BY TotalFacturadoSinImpuestos DESC;
+```
+![apartado_6](Tarea_12_Imagenes/consulta_apartado_6.png)
+
 
 
 
