@@ -27,6 +27,14 @@ INSERT INTO EmpresasFCT (nombre, quiereAlumnos, numAlumnos, fechaContacto) VALUE
 ```
 ![apartado_2](Tarea_12_Imagenes/consulta_apartado_2.png)
 
+## Apartado 3
+
+```bash
+SELECT * FROM EmpresasFCT 
+ORDER BY fechaContacto DESC;
+```
+![apartado_3](Tarea_12_Imagenes/consulta_apartado_3.png)
+
 
 
 
