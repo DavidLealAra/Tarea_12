@@ -35,6 +35,22 @@ ORDER BY fechaContacto DESC;
 ```
 ![apartado_3](Tarea_12_Imagenes/consulta_apartado_3.png)
 
+## Apartado 4
+
+```bash
+SELECT 
+    rp.name AS Nombre,
+    rp.city AS Ciudad,
+    c.name AS NombreComercial
+FROM res_partner rp
+LEFT JOIN res_partner c ON rp.parent_id = c.id
+WHERE rp.city = 'Tracy' 
+AND rp.is_company = FALSE
+ORDER BY c.name ASC;
+```
+![apartado_4](Tarea_12_Imagenes/consulta_apartado_4.png)
+
+
 
 
 
