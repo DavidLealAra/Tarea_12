@@ -29,6 +29,9 @@ INSERT INTO EmpresasFCT (nombre, quiereAlumnos, numAlumnos, fechaContacto) VALUE
 
 ## Apartado 3
 
+Realiza una consulta donde se muestren todos los datos de la tabla EmpresasFCT
+ordenados por fechaContacto, de modo que en la primera fila salga el que tenga la
+fecha más reciente.
 ```bash
 SELECT * FROM EmpresasFCT 
 ORDER BY fechaContacto DESC;
@@ -37,6 +40,11 @@ ORDER BY fechaContacto DESC;
 
 ## Apartado 4
 
+Realiza una consulta que permita obtener un listado de todos los contactos de  Odoo (no empresas) con la siguiente información: 
+- Nombre
+- Cuya ciudad sea Tracy 
+- Nombre comercial de la empresa
+ordenados alfabéticamente por el nombre comercial de la empresa.
 ```bash
 SELECT 
     rp.name AS Nombre,
@@ -49,7 +57,6 @@ AND rp.is_company = FALSE
 ORDER BY c.name ASC;
 ```
 ![apartado_4](Tarea_12_Imagenes/consulta_apartado_4.png)
-
 
 
 
